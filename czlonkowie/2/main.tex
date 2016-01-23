@@ -1,0 +1,32 @@
+
+\osoba{Krzysztof Szabla}
+\zadanieprojektowe{Wyszukanie potrzebnych narzędzi i literatury.}{2015-10-14}{2015-10-20}{zakończone}
+
+
+
+Do rozpoczęcia projektu potrzebne będą dwie rzeczy:Java Developer Kit, oraz zestaw Android SDK.  Android SDK zawiera kompilator programów na platformę Android, narzędzia do tworzenia i zarządzania wirtualnymi urządzeniami (na których możemy testować nasze programy), a także środowisko programistyczne Eclipse, JDK to po  Java z narzędziami dla programistów (np. kompilator Javy). W pierwszej kolejności pobieramy i instalujemy JDK. Możemy je pobrać ze strony http://www.oracle.com/technetwork/java/javase/downloads/index.html. Po pobraniu i rozpakowaniu, w rozpakowanym katalogu są katalogi eclipse, sdk, oraz program SDK Manager. 
+By zapoznać się z literaturą potrzebną do napisania aplikacji wyszukałem kilka pozycji w bibliotece takich jak:  "Android : aplikacje wielowątkowe, techniki przetwarzania"  Anders Göransson czy "Android : tworzenie aplikacji w oparciu o HTML, CSS i JavaScript"  Jonathan Stark, Brian Jepson i "Android-programowanie aplikacji na urządzenia przenośne" Shane Conder.
+\zadanieprojektowe{Wywiad ze zleceniodawcą}{2015-10-14}{2015-10-20}{zakończone}
+Celem przeprowadzenia wywiadu było zdobycie informacji na temat celu stworzenia aplikacji i grup odbiorców, dla której przeznaczona jest aplikacja, czyli spółki leśnej
+\zadanieprojektowe{Czytniki kodów kreskowych. Sporządzenie listy kodów kreskowych do czytelni}{2015-11-20}{2015-11-21}{zakończone}
+W polskich bibliotekach rośnie zapotrzebowanie na kody kreskowe. W bibliotekach (szkolnych, uniwersyteckich i publicznych) coraz częściej są wydawane karty czytelnika z kodem kreskowym, kody kreskowe są również naklejane na woluminy. Autoryzowanie czytelników przez kody kreskowe w pewnym stopniu uniemożliwia podszywanie się pod innych czytelników (oprogramowanie komputerowe coraz częściej oferuje zapisywanie w systemie zdjęć czytelników). Naklejanie kodów na woluminy i rejestrowanie ich w specjalnym oprogramowaniu ułatwia rejestrację wypożyczeń w systemie.
+
+Rodzaje skanerów:
+
+Początkowo skanery kodów używały diod LED jako źródła światła. Wadą tego rozwiązania była konieczność zbliżenia skanera na bardzo małą odległość od kodu. Obecnie produkowane skanery używają lasera, co umożliwia - zależnie od modelu - odczyt nawet z kilku metrów. Nowoczesne skanery potrafią odczytywać nie tylko kody jednowymiarowe (paskowe), lecz także kody 2D - dwuwymiarowe np. QR Code, Aztec Code oraz PDF417. Również prawie każdy nowy telefon posiadający kamerę można wyposażyć w odpowiednią aplikację, służącą do odczytu kodów kreskowych.
+
+Naszym zadaniem było sporządzenie listy kodów kreskowych, którymi zostaną oznaczone półki w regałach z książkami w czytelni. Oznaczenie musi być odpowiednio dobrze widoczne  przez czytelników i pracowników biblioteki. 
+Sporządziliśmy listę kodów kreskowych dla 90 regałow po 7 półek w każdym.
+
+Do testowania działania kodów kreskowych używaliśmy skanera Motorola LS2208.
+
+
+Używany kod kreskowy to Code 39, jest to  alfanumeryczny kod kreskowy o stałej szerokości pojedynczego znaku. Kod ten powstał w 1974 roku, a rozpowszechnił się po zastosowaniu go przez Departament Obrony USA do oznaczania przesyłek od dostawców. Obecnie jest wykorzystywany w branży motoryzacyjnej do oznaczania części. Największą wadą kodu jest stosunkowo mała gęstość zapisu danych. Z tego względu kod ten nie nadaje się do umieszczania na małych przedmiotach. Zaletą kodu jest fakt, iż może on zostać odczytany przez prawie każdy czytnik kodów kreskowych.
+
+\zadanieprojektowe{Naklejanie kodów kreskowych na regałach w czytelni}{2015-11-07}{2015-12-05}{}{zrealizowano}
+
+Naszym kolejnym zadaniem było naklejenie wszystkich kodów kreskowych typu Code 39 wraz z oznaczeniami numerycznymi na 6 półek w każdym regale, a następnie pokrycie tych kodów  specjalnymi foliami ochronnymi o wymiarach 5x7cm i 5x8,5cm. Do oznaczenia było 100 regałów.
+
+\zadanieprojektowe{Odczytywanie kodów kreskowych książek i przypisywanie ich do półek w czytelni}{2015-12-11}{}{w trakcie realizacji}
+
+Naszym następnym zadaniem było odczytanie przy pomocy czytnika Motorola LS2208 kodów kreskowych z książek znajdujących się w czytelni, a następnie przypisanie ich do odpowiednich półek i zapisanie listy kodów w notatniku.
