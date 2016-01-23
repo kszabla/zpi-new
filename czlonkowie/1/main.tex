@@ -411,3 +411,26 @@ Użycie: update [ŚCIEŻKA...]
 
 Aktualizuje kopię roboczą nanosząc zmiany obecne w repozytorium.  Jeśli nie podano wersji, nanoszone są najnowsze zmiany z  repozytorium (wersja HEAD).
 
+\subsection{Github}
+\subsubsection{Połączenie z siecią}
+Github nie wymaga podłączenia do sieci. Można mieć repozytorium lokalne i w nim \verb|commitować| swoje zmiany. Ale jeśli chce się żeby ktoś inny z nich skorzystał, to i tak trzeba zrobić \verb|pusha|. Lokalne commity pozwalają nam cofnąć się do poprzednich wersji, a \verb|push| używamy na mając skończony fragment kodu. 
+
+\subsubsection{Tworzenie nowego repozytorium}
+Korzystając z GitHuba możesz z jego poziomu stworzyć nowe repozytorium i sklonować lokalnie na dysku przez polecenie \texttt{git clone https://github.com/<twój-login>/ test.git} (możesz na końcu dodać parametr wskazujący katalog, do którego zostanie sklonowany projekt, czyli \texttt{git clone <adres-repo> katalog}). Teraz możesz pracować na plikach i synchronizować swoją wersję z wersją zdalną.
+Alternatywnie możesz zacząć pracować lokalnie (uruchomienie w katalogu projektu polecenia \verb|git init|). Będziesz mógł korzystać lokalnie z wersjonowania plików. Aby zsynchronizować projekt do zdalnego repozytorium, musisz założyć puste repozytorium (np. we wspomnianym GitHubie), a następnie lokalnie uruchomić polecenie git remote add test \texttt{https://github.com/<twój-login>/test.git}, a następnie zsynchronizować lokalny projekt do zdalnego repozytorium przez git \texttt{push origin master}.
+
+\subsubsection{Dodawanie, usuwanie i modyfikacja plików}
+Aby dodać plik, musisz go oczywiście stworzyć. Dodawanie istniejącego pliku do repozytorium wykonuje się poleceniem \verb|git add <plik>|. Aby usunąć plik istniejący w repozytorium, należy użyć polecenia \verb|git rm <plik>|. Po zmodyfikowaniu pliku nie musisz wykonywać żadnych poleceń, przy \verb|commicie| wystarczy parametr aby pliki zmodyfikowane, dodane i usunięte automatycznie znalazły się w commicie.
+Aby zobaczyć jakie dodane, usunięte i zmodyfikowane pliki oczekują na zatwierdzenie (\verb|commit|), oraz zobaczyć jakie pliki nie zostały dodane do repozytorium lokalnie, użyj polecenia \verb|git status|, lub \verb|git status -s|. To drugie wyświetla status w wersji short, czyli znacznie skróconej.
+Jeśli chcesz sprawdzić, jakie zmiany zostały wykonane na plikach które chcesz zatwierdzać, użyj polecenia \verb|git diff| (jeśli chcesz zobaczyć zmiany we wszystkich plikach), lub \verb|git diff <plik>| (zmiany w jednym wybranym pliku).
+
+\subsubsection{Zatwierdzanie zmian}
+Aby po zmianach w plikach zrobić nową kopię, należy użyć polecenia \verb|git commit -a|. Parametr -a powoduje, że pliki zmodyfikowane, dodane (przez \verb|git add|) i usunięte (przez \verb|git rm|) będą automatycznie uwzględnione w tej rewizji. W otwartym edytorze należy wpisać komentarz zmian, które zostały wykonane w stosunku do poprzedniej rewizji (poprzedniego wykonania \verb|commita|).
+
+\subsubsection{Synchronizacja z repozytorium zdalnym}
+Aby dokonane wcześniej zmiany które zostały „zacommitowane” trafiły do zdalnego repozytorium, należy je tam wysłać przy pomocy polecenia \verb|git push|. Jeśli chcesz wcześniej sprawdzić, jakie zmiany zostaną wysłane, możesz użyć polecenia \texttt{git diff master origin/master}.
+Oczywiście może się zdarzyć, że ktoś inny wysłał do zdalnego repozytorium swoje zmiany. Aby być na bieżąco z projektem, warto w miarę często aktualizować projekt danymi ze zdalnego repozytorium poleceniem \verb|git pull|.
+
+\subsubsection{Konflikty przy pull i merge}
+Oczywiście może się zdarzyć, że przy wykonaniu pull otrzymasz komunikat \texttt{Automatic merge failed; fix conflicts and then commit the result}. Oznacza to, że Twoje zmiany powodują konflikt z tymi, które wykonał ktoś inny. Musisz wtedy otworzyć dany plik, wykonać ręcznie modyfikacje, a następnie wykonać \verb|git add <plik>| i najlepiej od razu \verb|git commit|.
+Jeśli przed wykonaniem\verb|merge| wiesz jakie będą konflikty, możesz podać parametr powodujący, że konflikty będą rozwiązywane przyjmując wersję którą masz lokalnie (\texttt{git merge -s ours origin/master}) lub przyjmując wersję ściągniętą ze zdalnego repozytorium (\texttt{git merge -s theirs origin/master}).
